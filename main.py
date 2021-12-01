@@ -1,16 +1,38 @@
-# This is a sample Python script.
+class MyDog:
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def __init__(self, name, age, color, isAsleep=False):
+        self.name = name
+        self.age = age
+        self.color = color
+
+    def walk(self):
+        return print("{} is walking".format(self.name))
+
+    def eat(self):
+        return print("{} is eating food".format(self.name))
+
+    def sleep(self):
+        self.isAsleep = True
+        return print("{} is sleeping".format(self.name))
+
+    def wake_up(self):
+        self.isAsleep = False
+        return print("{} is waking up".format(self.name))
+
+    def info(self):
+        return print(self.name,
+                     self.age,
+                     self.color)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+walk_and_sleep = MyDog("billy", 12, False)
+walk_and_sleep.walk()
+walk_and_sleep.sleep()
+walk_and_sleep.wake_up()
+walk_and_sleep.eat()
 
+eat_and_sleep = MyDog("billy", 12, False)
+eat_and_sleep.eat()
+eat_and_sleep.sleep()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(dir(MyDog))
